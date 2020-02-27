@@ -1,3 +1,11 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['user_id']))
+	{
+		header("location: Login.php");
+	}
+?>
+
 <html>
 	<head>
 		<title>Change Password</title>
