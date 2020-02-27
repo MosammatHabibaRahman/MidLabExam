@@ -2,41 +2,54 @@
 	<head>
 		<title>View Users</title>
 	</head>
-	<body>
-		<center>
-			<table border = 1>
-				<tr>
-					<td colspan = 3><center>Users</center></td>
-				</tr>
-				<tr>
-					<td>ID</td>
-					<td>NAME</td>
-					<td>USER TYPE</td>
-				</tr>
-				<tr>
-					<td>15-10101-1</td>
-					<td>Bob</td>
-					<td>Admin</td>
-				</tr>
-				<tr>
-					<td>16-10102-2</td>
-					<td>Anne</td>
-					<td>User</td>
-				</tr>
-					<tr>
-					<td>16-10103-2</td>
-					<td>Kent</td>
-					<td>User</td>
-				</tr>
-					<tr>
-					<td>16-10104-3</td>
-					<td>James</td>
-					<td>Admin</td>
-				</tr>
-				<tr>
-					<td colspan = 3><a href = "AdminHome.php">Go Home</a></td>
-				</tr>
-			</table>
-		</center>
-	</body>
 </html>
+
+<?php
+	session_start();
+	if(!isset($_SESSION['user_id']) || $_SESSION['user_type'] != "Admin")
+	{
+		header("location: Login.php");
+	}
+	else
+	{
+		$user_id = $_SESSION['user_id'];
+		$name = $_SESSION['name'];
+		$type = $_SESSION['user_type'];
+
+		$file = file("Reg_Info.txt");
+		$data = array();
+
+		foreach($file as $i)
+		{
+			array_push($data,explode('|',$i));
+		}
+
+		$table="<center>
+				<table border = 1 width = 400px>
+				<tr>
+				<td colspan = 3><center>Users</center></td>
+				</tr>
+				<tr>
+				<td><center>ID</center></td>
+				<td><center>NAME</center></td>
+				<td><center>USER TYPE</center></td>
+				</tr>";
+	
+		foreach($data as $v)
+		{
+		$table .= 	"<tr>
+					<td><center>".$v[0]."</center></td>
+					<td><center>".$v[2]."</center></td>
+					<td><center>".$v[3]."</center></td>
+					</tr>";
+		}
+
+		$table .= 	"<tr>
+					<td colspan = 3><a href = "."AdminHome.php".">Go Home</a></td>
+					</tr>
+					</table>
+					</center>";
+
+		echo $table;
+	}
+?>

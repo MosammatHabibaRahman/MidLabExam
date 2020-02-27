@@ -22,15 +22,8 @@
 			$file = fopen("Reg_Info.txt", 'a');
 			fwrite($file,$str."\r\n");
 			fclose($file);
-			
-			if($type == "Admin")
-			{
-				header("location: AdminHome.php");
-			}
-			else
-			{
-				header("location: UserHome.php");
-			}
+
+			header("location: Login.php");
 		}
 	}
 ?>

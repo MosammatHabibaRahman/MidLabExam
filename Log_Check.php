@@ -1,5 +1,4 @@
 <?php
-
 	session_Start();
 
 	if(isset($_REQUEST['login']))
