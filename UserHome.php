@@ -1,6 +1,9 @@
 <?php
 	session_start();
-	//$name = " ";
+	if(!isset($_SESSION['user_id']) || $_SESSION['user_type'] != "User")
+	{
+		header("location: Login.php");
+	}
 ?>
 
 <html>
@@ -13,10 +16,10 @@
 				<tr>
 					<td>
 						<center>
-							<h1>Welcome Anne!</h1><br>
-							<u>Profile</u><br>
-							<u>Change Password</u><br>
-							<u>Logout</u><br>
+							<h1>Welcome <?= $_SESSION['name']?>!</h1><br>
+							<a href = "Profile.php"><u>Profile</u></a><br>
+							<a href = "ChangePassword.php"><u>Change Password</u></a><br>
+							<a href = "Logout.php"><u>Logout</u></a><br>
 							<br>
 							<br>
 						</center>
