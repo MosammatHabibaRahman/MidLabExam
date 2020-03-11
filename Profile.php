@@ -18,6 +18,15 @@
 		<title>Profile</title>
 	</head>
 	<body>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 		<center>
 			<table border = 1 width = 300px>
 				<tr>

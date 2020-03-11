@@ -24,7 +24,16 @@
 			array_push($data,explode('|',$i));
 		}
 
-		$table="<center>
+		$table="<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<center>
 				<table border = 1 width = 400px>
 				<tr>
 				<td colspan = 3><center>Users</center></td>

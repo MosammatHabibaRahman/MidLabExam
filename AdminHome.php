@@ -11,6 +11,15 @@
 		<title>Admin Home Page</title>
 	</head>
 	<body>
+	<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 		<center>
 			<table border = 1 width = 400px>
 				<tr>
